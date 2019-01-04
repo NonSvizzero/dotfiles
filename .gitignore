@@ -1,5 +1,7 @@
-*
+/*
 
 !.gitignore
 !.vimrc
 !.zshrc
+!.dir_colors/
+!.dir_colors/dircolors
