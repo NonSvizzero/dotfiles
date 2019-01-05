@@ -6,3 +6,5 @@
 !.dir_colors/
 !.dir_colors/dircolors
 !.tmux.conf
+!.conky/*
+!.conky/.conky-toolbar
