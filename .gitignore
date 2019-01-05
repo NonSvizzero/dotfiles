@@ -1,11 +1,19 @@
 /*
-
 !.gitignore
 !.vimrc
 !.zshrc
 !.dir_colors/
 !.dir_colors/dircolors
 !.tmux.conf
+
+# Conky
 !.conky/
 .conky/*
 !.conky/.conky-toolbar
+
+# Glava
+!.config/
+.config/*
+!.config/glava/
+.config/glava/*
+!.config/glava/radial.glsl
