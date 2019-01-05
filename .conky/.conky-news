@@ -33,58 +33,58 @@ uppercase no
 own_window_colour 000000
 minimum_size 0 0
 TEXT
-${font Poiret One:bold:size=18}${rss http://feeds.reuters.com/reuters/topNews 30 feed_title}$font
+${font Poiret One:bold:size=18}${rss http://feeds.reuters.com/reuters/topNews 60 feed_title}$font
 ${color #D90182}$hr$color
-${rss http://feeds.reuters.com/reuters/topNews 30 item_title 1}
-${rss http://feeds.reuters.com/reuters/topNews 30 item_title 2}
-${rss http://feeds.reuters.com/reuters/topNews 30 item_title 3}
-${rss http://feeds.reuters.com/reuters/topNews 30 item_title 4}
-${rss http://feeds.reuters.com/reuters/topNews 30 item_title 5}
-${rss http://feeds.reuters.com/reuters/topNews 30 item_title 6}
+${rss http://feeds.reuters.com/reuters/topNews 60 item_title 1}
+${rss http://feeds.reuters.com/reuters/topNews 60 item_title 2}
+${rss http://feeds.reuters.com/reuters/topNews 60 item_title 3}
+${rss http://feeds.reuters.com/reuters/topNews 60 item_title 4}
+${rss http://feeds.reuters.com/reuters/topNews 60 item_title 5}
+${rss http://feeds.reuters.com/reuters/topNews 60 item_title 6}
 
-${font Poiret One:bold:size=18}${rss https://www.wsj.com/xml/rss/3_7085.xml 30 feed_title}$font
+${font Poiret One:bold:size=18}${rss https://www.wsj.com/xml/rss/3_7085.xml 60 feed_title}$font
 ${color #D90182}$hr$color
-${rss https://www.wsj.com/xml/rss/3_7085.xml 30 item_title 1}
-${rss https://www.wsj.com/xml/rss/3_7085.xml 30 item_title 2}
-${rss https://www.wsj.com/xml/rss/3_7085.xml 30 item_title 3}
-${rss https://www.wsj.com/xml/rss/3_7085.xml 30 item_title 4}
-${rss https://www.wsj.com/xml/rss/3_7085.xml 30 item_title 5}
-${rss https://www.wsj.com/xml/rss/3_7085.xml 30 item_title 6}
+${rss https://www.wsj.com/xml/rss/3_7085.xml 60 item_title 1}
+${rss https://www.wsj.com/xml/rss/3_7085.xml 60 item_title 2}
+${rss https://www.wsj.com/xml/rss/3_7085.xml 60 item_title 3}
+${rss https://www.wsj.com/xml/rss/3_7085.xml 60 item_title 4}
+${rss https://www.wsj.com/xml/rss/3_7085.xml 60 item_title 5}
+${rss https://www.wsj.com/xml/rss/3_7085.xml 60 item_title 6}
 
-${font Poiret One:bold:size=18}${rss http://rss.dw.com/rdf/rss-en-all 30 feed_title}$font
+${font Poiret One:bold:size=18}${rss http://rss.dw.com/rdf/rss-en-all 60 feed_title}$font
 ${color #D90182}$hr$color
-${rss http://rss.dw.com/rdf/rss-en-all 30 item_title 1}
-${rss http://rss.dw.com/rdf/rss-en-all 30 item_title 2}
-${rss http://rss.dw.com/rdf/rss-en-all 30 item_title 3}
-${rss http://rss.dw.com/rdf/rss-en-all 30 item_title 4}
-${rss http://rss.dw.com/rdf/rss-en-all 30 item_title 5}
-${rss http://rss.dw.com/rdf/rss-en-all 30 item_title 6}
+${rss http://rss.dw.com/rdf/rss-en-all 60 item_title 1}
+${rss http://rss.dw.com/rdf/rss-en-all 60 item_title 2}
+${rss http://rss.dw.com/rdf/rss-en-all 60 item_title 3}
+${rss http://rss.dw.com/rdf/rss-en-all 60 item_title 4}
+${rss http://rss.dw.com/rdf/rss-en-all 60 item_title 5}
+${rss http://rss.dw.com/rdf/rss-en-all 60 item_title 6}
 
-${font Poiret One:bold:size=18}${rss https://www.ilpost.it/italia/feed 30 feed_title}$font
+${font Poiret One:bold:size=18}${rss https://www.ilpost.it/italia/feed 60 feed_title}$font
 ${color #D90182}$hr$color
-${rss https://www.ilpost.it/italia/feed 30 item_title 1}
-${rss https://www.ilpost.it/italia/feed 30 item_title 2}
-${rss https://www.ilpost.it/italia/feed 30 item_title 3}
-${rss https://www.ilpost.it/italia/feed 30 item_title 4}
-${scroll 10}${rss https://www.ilpost.it/italia/feed 30 item_title 5}
-${rss https://www.ilpost.it/italia/feed 30 item_title 6}
+${rss https://www.ilpost.it/italia/feed 60 item_title 1}
+${rss https://www.ilpost.it/italia/feed 60 item_title 2}
+${rss https://www.ilpost.it/italia/feed 60 item_title 3}
+${rss https://www.ilpost.it/italia/feed 60 item_title 4}
+${scroll 10}${rss https://www.ilpost.it/italia/feed 60 item_title 5}
+${rss https://www.ilpost.it/italia/feed 60 item_title 6}
 
-${font Poiret One:bold:size=18}${rss https://news.ycombinator.com/rss 30 feed_title}$font
+${font Poiret One:bold:size=18}${rss https://news.ycombinator.com/rss 60 feed_title}$font
 ${color #D90182}$hr$color
-${rss https://news.ycombinator.com/rss 30 item_title 1}
-${rss https://news.ycombinator.com/rss 30 item_title 2}
-${rss https://news.ycombinator.com/rss 30 item_title 3}
-${rss https://news.ycombinator.com/rss 30 item_title 4}
-${rss https://news.ycombinator.com/rss 30 item_title 5}
-${rss https://news.ycombinator.com/rss 30 item_title 6}
+${rss https://news.ycombinator.com/rss 60 item_title 1}
+${rss https://news.ycombinator.com/rss 60 item_title 2}
+${rss https://news.ycombinator.com/rss 60 item_title 3}
+${rss https://news.ycombinator.com/rss 60 item_title 4}
+${rss https://news.ycombinator.com/rss 60 item_title 5}
+${rss https://news.ycombinator.com/rss 60 item_title 6}
 
-${font Poiret One:bold:size=18}${rss https://www.techmeme.com/feed.xml 30 feed_title}$font
+${font Poiret One:bold:size=18}${rss https://www.techmeme.com/feed.xml 60 feed_title}$font
 ${color #D90182}$hr$color
-${rss https://www.techmeme.com/feed.xml 30 item_title 1}
-${rss https://www.techmeme.com/feed.xml 30 item_title 2}
-${rss https://www.techmeme.com/feed.xml 30 item_title 3}
-${rss https://www.techmeme.com/feed.xml 30 item_title 4}
-${rss https://www.techmeme.com/feed.xml 30 item_title 5}
-${rss https://www.techmeme.com/feed.xml 30 item_title 6}
+${rss https://www.techmeme.com/feed.xml 60 item_title 1}
+${rss https://www.techmeme.com/feed.xml 60 item_title 2}
+${rss https://www.techmeme.com/feed.xml 60 item_title 3}
+${rss https://www.techmeme.com/feed.xml 60 item_title 4}
+${rss https://www.techmeme.com/feed.xml 60 item_title 5}
+${rss https://www.techmeme.com/feed.xml 60 item_title 6}
 
 

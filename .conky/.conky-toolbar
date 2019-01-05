@@ -30,6 +30,7 @@ uppercase no
 own_window_colour 000000
 minimum_size 0 0
 TEXT
+${color white}NET    ${alignc}${addr wlp3s0} | $color${curl http://icanhazip.com 60}
 ${color white}CPU    ${color #D90182}${cpubar cpu0 6,160} $alignr${color}${cpu cpu0}% |${hwmon 0 temp 1}°C
 
 ${color white}1 ${color #D90182}${cpubar cpu1 6,130}$color $alignr ${color white}3 ${color #D90182}${cpubar cpu3 6,130}$color $alignr 

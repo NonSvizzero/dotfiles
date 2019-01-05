@@ -29,18 +29,19 @@ function conky_main()
   updatesPrSecond = 1/conky_info["update_interval"];
   t = conky_info["update_interval"]*(tonumber(conky_parse('${updates}')));
   period = 1;
-  t = t;
-  t=t/10;
+  t=t/100;
+  c = math.cos(t * 3.14);
+  s = math.sin(t * 3.14);
 
   local volume = tonumber(conky_parse('${exec pulsemixer --get-volume | grep -oPm2 "[0-9]+" | tail -n1}'));
-  local battery = tonumber(conky_parse('${exec acpi | grep -oPm2 "[0-9]+" | tail -n1}'));
+  local battery = tonumber(conky_parse('${exec acpi | grep -oPm2 "[0-9]+" | head -n2 | tail -n1}'));
   local brightness = tonumber(conky_parse('${exec xbacklight | grep -oPm2 "[0-9]+" | head -n1}'));
   
-  local cy,radius = Height/2, Height/20;
-  
-  draw_icosahedron(Width/2.3,cy/6*1,radius*.1+radius*.9*volume/100);
-  draw_tetrahedron(Width/2.3,cy/6*3,radius*.1+radius*.9*battery/100);
-  draw_dodecahedron(Width/2.3,cy/6*5,radius*.1+radius*.9*brightness/100);
+  local radius = Height/12;
+    
+  draw_icosahedron(nil,radius*1,radius*.1+radius*.9*volume/100);
+  draw_tetrahedron(nil,radius*3,radius*.1+radius*.9*battery/100);
+  draw_dodecahedron(nil,radius*5,radius*.1+radius*.9*brightness/100);
   
   cairo_destroy(cr);
   cairo_surface_destroy(cs);
@@ -59,8 +60,6 @@ function drawPoint(x,y,size)
 end
 
 function rotate_x(p, angle)
-  local c = math.cos(angle);
-  local s = math.sin(angle);
   matrix = {
     {1,0,0},
     {0,c,-s},
@@ -70,8 +69,6 @@ function rotate_x(p, angle)
   return matrix_vector_product(matrix, p);
 end
 function rotate_y(p, angle)
-  local c = math.cos(angle);
-  local s = math.sin(angle);
   matrix = {
     { c, 0, s},
     { 0, 1, 0},
@@ -81,8 +78,6 @@ function rotate_y(p, angle)
   return matrix_vector_product(matrix, p);
 end
 function rotate_z(p, angle)
-  local c = math.cos(angle);
-  local s = math.sin(angle);
   matrix = {
     {c,-s,0},
     {s,c,0},
@@ -161,7 +156,7 @@ function draw_dodecahedron(cx, cy, radius)
     {14,16},
   };
 
-  draw_mesh(cx,cy,vertices, edges,radius,0x7c, 0x9f, 0xa6, 100);
+  draw_mesh(cx,cy,vertices, edges,radius, 100);
 end
 function draw_tetrahedron(cx, cy, radius)
   local pointSize = 10;
@@ -183,7 +178,7 @@ function draw_tetrahedron(cx, cy, radius)
     {4,2}
   };
 
-  draw_mesh(cx,cy,vertices, edges,radius,0x7c, 0x9f, 0xa6, 200);
+  draw_mesh(cx,cy,vertices, edges,radius, 200);
 end
 function draw_icosahedron(cx, cy, radius)
   local q = 0.5663; -- bound coordinates to the unit circle
@@ -225,13 +220,18 @@ function draw_icosahedron(cx, cy, radius)
     {12,7},
     {5,7},
   };
-  draw_mesh(cx,cy,vertices, edges,radius,0x7c, 0x9f, 0xa6,300);
+  draw_mesh(cx,cy,vertices, edges, radius, 300);
 end
 
-function draw_mesh(x,y,vertices, edges, scale,r,g,b,timeOffset)
+function draw_mesh(x,y,vertices, edges, scale, timeOffset)
   local pointSize = 10*scale/(Height/8);  
   local lineSize = 4;
-
+  
+  local shift = 0.4 * math.abs (math.cos(t * 3.14 + y));
+  local r = 0xdb + shift * 0x64;
+  local g = 0x00 + shift * 0x5B;
+  local b = 0x81 + shift * 0xE6;
+  x = Width / 2.5 + 200 * math.sin(t * 3.14 + y);
   for index,point in pairs(vertices) do
     point = rotate_x(point,(t+timeOffset)/2);
     point = rotate_y(point,(t+timeOffset)/3);
@@ -239,8 +239,7 @@ function draw_mesh(x,y,vertices, edges, scale,r,g,b,timeOffset)
     vertices[index] = point;
 
     local shadeAmount = (point[3]>0 and 0 or -point[3]*.5);
-    cairo_set_source_rgba(cr, 0xd9/0xff, 0x01/0xff, 0x82/0xff, 1-shadeAmount);
-    -- cairo_set_source_rgba(cr, r/0xff, g/0xff, b/0xff, 1);
+    cairo_set_source_rgba(cr, r/0xff, g/0xff, b/0xff, 1-shadeAmount);
 
     drawPoint(x+point[1]*scale, y+point[2]*scale, pointSize);
   end
@@ -248,8 +247,7 @@ function draw_mesh(x,y,vertices, edges, scale,r,g,b,timeOffset)
   for index,line in pairs(edges) do
     z = vertices[line[1]][3]+vertices[line[2]][3]/2;
     local shadeAmount = (z>0 and 0 or -z*.5);
-    cairo_set_source_rgba(cr, 0xd9/0xff, 0x01/0xff, 0x82/0xff, 1-shadeAmount);
-    -- cairo_set_source_rgba(cr, r/0xff, g/0xff, b/0xff, 1);
+    cairo_set_source_rgba(cr, r/0xff, g/0xff, b/0xff, 1-shadeAmount);
 
     drawLine(
       x+vertices[line[1]][1]*scale, y+vertices[line[1]][2]*scale,
