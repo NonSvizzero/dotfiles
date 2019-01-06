@@ -30,8 +30,10 @@ uppercase no
 own_window_colour 000000
 minimum_size 0 0
 TEXT
-${color white}NET    ${alignc}${addr wlp3s0} | $color${curl http://icanhazip.com 60}
-${color white}CPU    ${color #D90182}${cpubar cpu0 6,160} $alignr${color}${cpu cpu0}% |${hwmon 0 temp 1}°C
+${color white} UP    ${alignr}$uptime_short
+${color white}NET    ${alignr}${addr wlp3s0} | $color${curl http://icanhazip.com 60}
+${color #D90182}$hr$color
+${color white}CPU    ${color #D90182}${cpubar cpu0 6,140} $alignr${color}${cpu cpu0}% |${hwmon 0 temp 1}°C
 
 ${color white}1 ${color #D90182}${cpubar cpu1 6,130}$color $alignr ${color white}3 ${color #D90182}${cpubar cpu3 6,130}$color $alignr 
 ${color white}2 ${color #D90182}${cpubar cpu2 6,130}$color $alignr ${color white}4 ${color #D90182}${cpubar cpu4 6,130}$color $alignr 
@@ -40,7 +42,7 @@ ${color}${top pid 1}    ${top name 1}${alignr}${top cpu 1}%
 ${color}${top pid 2}    ${top name 2}${alignr}${top cpu 2}%
 ${color}${top pid 3}    ${top name 3}${alignr}${top cpu 3}%
 ${color #D90182}$hr$color
-${color white}RAM    ${color #D90182}${alignc}${membar 6,160} ${alignr}$color${memperc}% Used
+${color white}RAM    ${color #D90182}${alignc}${membar 6,140} ${alignr}$color${memperc}% Used
 
 ${color}${top_mem pid 1}    ${top_mem name 1}${alignr}${top_mem mem 1}%
 ${color}${top_mem pid 2}    ${top_mem name 2}${alignr}${top_mem mem 2}%

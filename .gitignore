@@ -10,6 +10,7 @@
 !.conky/
 .conky/*
 !.conky/.conky-toolbar
+!.conky/Retrowave/
 
 # Glava
 !.config/
