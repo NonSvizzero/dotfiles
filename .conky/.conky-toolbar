@@ -31,7 +31,7 @@ own_window_colour 000000
 minimum_size 0 0
 TEXT
 ${color white} UP    ${alignr}$uptime_short
-${color white}NET    ${alignr}${addr wlp3s0} | $color${curl http://icanhazip.com 60}
+${color white}NET    ${alignr}${addr eno1} | $color${curl http://icanhazip.com 60}
 ${color #D90182}$hr$color
 ${color white}CPU    ${color #D90182}${cpubar cpu0 6,140} $alignr${color}${cpu cpu0}% |${hwmon 0 temp 1}°C
 

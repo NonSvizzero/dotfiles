@@ -34,13 +34,13 @@ function conky_main()
   s = math.sin(t * 3.14);
 
   local volume = tonumber(conky_parse('${exec pulsemixer --get-volume | grep -oPm2 "[0-9]+" | tail -n1}'));
-  local battery = tonumber(conky_parse('${exec acpi | grep -oPm2 "[0-9]+" | head -n2 | tail -n1}'));
-  local brightness = tonumber(conky_parse('${exec xbacklight | grep -oPm2 "[0-9]+" | head -n1}'));
+  local memory = tonumber(conky_parse("${exec free | grep Mem | awk '{print int($4/$2 * 100.0)}'}"));
+  local brightness = 100;
   
   local radius = Height/12;
     
   draw_icosahedron(nil,radius*1,radius*.1+radius*.9*volume/100);
-  draw_tetrahedron(nil,radius*3,radius*.1+radius*.9*battery/100);
+  draw_tetrahedron(nil,radius*3,radius*.1+radius*.9*memory/100);
   draw_dodecahedron(nil,radius*5,radius*.1+radius*.9*brightness/100);
   
   cairo_destroy(cr);
