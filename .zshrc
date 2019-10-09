@@ -78,6 +78,10 @@ source $ZSH/oh-my-zsh.sh
 if [ -d "$HOME/bin" ] ; then
     export PATH="$HOME/bin:$PATH"
 fi
+
+# Custom Paths
+export PATH="/opt/MATLAB/R2019b/bin:$PATH"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
