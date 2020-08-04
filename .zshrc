@@ -110,6 +110,8 @@ export PATH="/opt/MATLAB/R2019b/bin:$PATH"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias t='todo.sh -n -d /mnt/drive/todo/todo.cfg'
 alias yt2mp3='youtube-dl --extract-audio --audio-format mp3'
+alias setclip="xclip -selection c"
+alias getclip="xclip -selection c -o"
 # User functions
 function pdffind(){
 	find $1 -iname '*.pdf' -exec pdfgrep $2 {} +
